@@ -38,6 +38,7 @@ module.exports = function livereload(opt) {
 
   function _html(str) {
     if (!str) return false;
+    if (str.substr(0, 5) == "%PDF-") return false;
     return /<[:_-\w\s\!\/\=\"\']+>/i.test(str);
   }
 
